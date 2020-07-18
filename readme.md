@@ -1,5 +1,6 @@
 # vue-stop-multiple-click
 
+![npm](https://img.shields.io/npm/v/vue-stop-multiple-click)
 [![gzip size](http://img.badgesize.io/https://unpkg.com/vue-stop-multiple-click/vue-prevent-multiple-click.js?compression=gzip&label=gzip%20size&style=flat-square)](https://unpkg.com/vue-stop-multiple-click/vue-prevent-multiple-click.js)
 [![downloads](https://img.shields.io/npm/dm/vue-stop-multiple-click.svg?style=flat-square)](https://www.npmtrends.com/vue-stop-multiple-click)
 [![MIT License](https://img.shields.io/npm/l/vue-stop-multiple-click.svg?style=flat-square)](https://github.com/fisker/vue-stop-multiple-click/blob/master/license)
@@ -35,3 +36,6 @@ Vue.directive('clickAsync', StopMultipleClick)
 
 <button v-click-async="ajaxPromiseFn">button will auto prevent multiple clicks</button>
 ```
+
+## example / demo
+[online example](https://en777.github.io/vue-stop-multiple-click/example.html)
