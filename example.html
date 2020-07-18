@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue prevent multiple click</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>vue prevent multiple click</h1>
+
+    <button v-click-async="onGetData">stop multiple click button</button>
+    <br>
+    <br>
+    <button @click="onGetData">normal button click</button>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+  <script src="./vue-prevent-multiple-click.js"></script>
+  <script>
+    var StopMultipleClick = window.StopMultipleClick
+    Vue.directive('clickAsync', StopMultipleClick)
+
+    new Vue({
+      el: '#app',
+      methods: {
+        onGetData () {
+          var url = 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js?_ts=' + new Date().getTime()
+
+          return Promise.all([
+            fetch(url),
+            delay(2000)
+          ])
+        },
+      }
+    })
+
+    function delay(ms) {
+			return new Promise(function (resolve, reject) {
+				setTimeout(resolve, ms)
+			})
+		}
+  </script>
+</body>
+
+</html>
