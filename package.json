@@ -1,6 +1,6 @@
 {
   "name": "vue-stop-multiple-click",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "vue-prevent-multiple-click.js",
   "scripts": {
