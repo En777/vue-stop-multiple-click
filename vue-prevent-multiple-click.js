@@ -11,7 +11,7 @@
   }
 }(this, function () {
   var preventMultipleClick = {
-    bind: function (el, binding, vnode, oldVnode) {
+    bind: function (el, binding) {
       var asyncHandler = binding.value;
       var minDelay = 1000;
       var customDelay = Number(binding.arg);
