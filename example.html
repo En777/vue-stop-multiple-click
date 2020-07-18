@@ -11,9 +11,19 @@
   <div id="app">
     <h1>vue prevent multiple click</h1>
 
+    <div>v-click-async="onGetData"</div>
     <button v-click-async="onGetData">stop multiple click button</button>
     <br>
     <br>
+    <div>v-click-async:5000="onGetData"</div>
+    <button v-click-async:5000="onGetData">stop multiple click button(5s delay at least)</button>
+    <br>
+    <br>
+    <div>v-click-async:0="onGetData2"</div>
+    <button v-click-async:0="onGetData2">stop multiple click button(0s delay)</button>
+    <br>
+    <br>
+    <div>normal button</div>
     <button @click="onGetData">normal button click</button>
 
   </div>
@@ -35,11 +45,14 @@
             delay(2000)
           ])
         },
+        onGetData2 () {
+          return delay(300)
+        },
       }
     })
 
     function delay(ms) {
-			return new Promise(function (resolve, reject) {
+			return new Promise(function (resolve) {
 				setTimeout(resolve, ms)
 			})
 		}
