@@ -13,12 +13,23 @@
   var preventMultipleClick = {
     bind: function (el, binding, vnode, oldVnode) {
       var asyncHandler = binding.value;
+      var minDelay = 1000;
+      var customDelay = Number(binding.arg);
+      var isNumber = !isNaN(customDelay)
+
+      if (isNumber) {
+        minDelay = customDelay;
+      }
+
       var asyncFlow = function () {
         if (el.disabled) return;
         el.disabled = true;
 
         Promise.resolve().then(function () {
-          return asyncHandler();
+          return Promise.all([
+            asyncHandler(),
+            delay(minDelay)
+          ])
         }).finally(function () {
           el.disabled = false;
         })
@@ -26,6 +37,12 @@
 
       el.addEventListener('click', asyncFlow)
     }
+  }
+
+  function delay(ms) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, ms)
+    })
   }
 
   return preventMultipleClick;
