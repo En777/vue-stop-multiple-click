@@ -8,7 +8,8 @@
 a simple way prevent button multiple clicks.
 
 一个非常简单的方式，防止按钮重复点击。
-使用一个指令，把异步 Promise 函数 ```v-click-async="ajaxPromiseFn"``` 传入，程序会自动防止按钮重复点击（一定要等到异步函数结束，才能再次点击）。
+
+使用一个指令，像这样 ```v-click-async="ajaxPromiseFn"``` 把 Promise 函数传入，程序就能自动防止按钮重复点击了。按钮被点击后，一定要等到异步函数结束，才能再次点击，从而解决了重复点击的问题。
 
 ## Usage
 ```js
