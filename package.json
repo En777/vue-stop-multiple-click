@@ -1,0 +1,30 @@
+{
+  "name": "vue-stop-multiple-click",
+  "version": "0.0.1",
+  "description": "",
+  "main": "vue-prevent-multiple-click.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@En777",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/En777/vue-stop-multiple-click.git"
+  },
+  "keywords": [
+    "vue",
+    "prevent",
+    "multiple",
+    "click",
+    "prevent-multiple-clicks",
+    "submit",
+    "ajax",
+    "stop",
+    "async"
+  ],
+  "bugs": {
+    "url": "https://github.com/En777/vue-stop-multiple-click/issues"
+  },
+  "homepage": "https://github.com/En777/vue-stop-multiple-click"
+}
