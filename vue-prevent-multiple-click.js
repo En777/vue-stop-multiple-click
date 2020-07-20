@@ -25,6 +25,14 @@
         if (el.disabled) return;
         el.disabled = true;
 
+        var classList = el.classList
+        var disabledClassList = (el.getAttribute('disabled-class') || '').split(' ').filter(function (className) {
+          return className !== ''
+        })
+        var hasDisabledClass = disabledClassList.length > 0
+
+        hasDisabledClass && DOMTokenList.prototype.add.apply(classList, disabledClassList);
+
         Promise.resolve().then(function () {
           return Promise.all([
             asyncHandler(),
@@ -32,6 +40,8 @@
           ])
         }).finally(function () {
           el.disabled = false;
+
+          hasDisabledClass && DOMTokenList.prototype.remove.apply(classList, disabledClassList);
         })
       }
 
