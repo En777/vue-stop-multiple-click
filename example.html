@@ -43,7 +43,7 @@
     new Vue({
       el: '#app',
       methods: {
-        onGetData () {
+        onGetData() {
           var url = 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js?_ts=' + new Date().getTime()
 
           return Promise.all([
@@ -51,18 +51,51 @@
             delay(2000)
           ])
         },
-        onGetData2 () {
+        onGetData2() {
           return delay(300)
         },
       }
     })
 
     function delay(ms) {
-			return new Promise(function (resolve) {
-				setTimeout(resolve, ms)
-			})
-		}
+      return new Promise(function (resolve) {
+        setTimeout(resolve, ms)
+      })
+    }
   </script>
+
+  <!-- element-ui -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-ui/lib/theme-chalk/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/element-ui/lib/index.js"></script>
+
+  <div id="app2">
+    <h3>custom disabled class (work with others UI components)</h3>
+    <div>v-click-async="onGetData" disabled-class="is-disabled"</div>
+    <el-button v-click-async="onGetData" disabled-class="is-disabled" type="primary">stop multiple click button</el-button>
+    <br>
+    <br>
+    <div>v-click-async="onGetData" disabled style is not working</div>
+    <el-button v-click-async="onGetData" type="primary">stop multiple click button</el-button>
+    <br>
+    <br>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app2',
+      methods: {
+        onGetData() {
+          var url = 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js'
+
+          return Promise.all([
+            fetch(url),
+            delay(2000)
+          ])
+        }
+      }
+    })
+  </script>
+
 </body>
 
 </html>
