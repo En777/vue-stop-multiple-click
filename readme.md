@@ -8,19 +8,21 @@
 
 a simple way prevent button multiple clicks.
 
-一个非常简单的方式，防止按钮重复点击。
+一个非常简单的方式，防止按钮重复点击、重复 ajax 提交。
 
-使用一个指令，像这样 ```v-click-async="ajaxPromiseFn"``` 把 Promise 函数传入，程序就能自动防止按钮重复点击了。按钮被点击后，一定要等到异步函数结束，才能再次点击，从而解决了重复点击的问题。
+使用一个指令，像这样 ```v-click="ajaxPromiseFn"``` 把 Promise 函数传入，程序就能自动防止按钮重复点击了。按钮被点击后，一定要等到 ajax 结束(成功或失败)，才能再次点击，从而解决了重复点击的问题。
+
+这可能是防重复点击的最佳实践，比防抖、节流都好得多。
 
 ## Usage
 ```js
 const StopMultipleClick = require('vue-stop-multiple-click')
 
-Vue.directive('clickAsync', StopMultipleClick)
+Vue.directive('click', StopMultipleClick)
 ```
 
 ```html
-<button v-click-async="ajaxPromiseFn">a simple way prevent button multiple clicks</button>
+<button v-click="ajaxPromiseFn">a simple way prevent button multiple clicks</button>
 ```
 
 or use CDN script:
@@ -31,10 +33,10 @@ or use CDN script:
 <script>
 var StopMultipleClick = window.StopMultipleClick
 
-Vue.directive('clickAsync', StopMultipleClick)
+Vue.directive('click', StopMultipleClick)
 </script>
 
-<button v-click-async="ajaxPromiseFn">button will auto prevent multiple clicks</button>
+<button v-click="ajaxPromiseFn">button will auto prevent multiple clicks</button>
 ```
 
 ## example / demo

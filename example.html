@@ -16,16 +16,16 @@
     <br>
     <br>
 
-    <div>v-click-async="onGetData"</div>
-    <button v-click-async="onGetData">stop multiple click button</button>
+    <div>v-click="onGetData"</div>
+    <button v-click="onGetData">stop multiple click button</button>
     <br>
     <br>
-    <div>v-click-async:5000="onGetData"</div>
-    <button v-click-async:5000="onGetData">stop multiple click button(5s delay at least)</button>
+    <div>v-click:5000="onGetData"</div>
+    <button v-click:5000="onGetData">stop multiple click button(5s delay at least)</button>
     <br>
     <br>
-    <div>v-click-async:0="onGetData2"</div>
-    <button v-click-async:0="onGetData2">stop multiple click button(0s delay)</button>
+    <div>v-click:0="onGetData2"</div>
+    <button v-click:0="onGetData2">stop multiple click button(0s delay)</button>
     <br>
     <br>
     <div>normal button</div>
@@ -38,7 +38,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue-stop-multiple-click@0/vue-prevent-multiple-click.min.js"></script>
   <script>
     var StopMultipleClick = window.StopMultipleClick
-    Vue.directive('clickAsync', StopMultipleClick)
+    Vue.directive('click', StopMultipleClick)
 
     new Vue({
       el: '#app',
@@ -70,12 +70,12 @@
 
   <div id="app2">
     <h3>custom disabled class (work with others UI components)</h3>
-    <div>v-click-async="onGetData" disabled-class="is-disabled"</div>
-    <el-button v-click-async="onGetData" disabled-class="is-disabled" type="primary">stop multiple click button</el-button>
+    <div>v-click="onGetData" disabled-class="is-disabled"</div>
+    <el-button v-click="onGetData" disabled-class="is-disabled" type="primary">stop multiple click button</el-button>
     <br>
     <br>
-    <div>v-click-async="onGetData" disabled style is not working</div>
-    <el-button v-click-async="onGetData" type="primary">stop multiple click button</el-button>
+    <div>v-click="onGetData" disabled style is not working</div>
+    <el-button v-click="onGetData" type="primary">stop multiple click button</el-button>
     <br>
     <br>
   </div>
