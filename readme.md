@@ -16,9 +16,10 @@ a simple way prevent button multiple clicks.
 
 ## Usage
 ```js
-const StopMultipleClick = require('vue-stop-multiple-click')
+// npm install vue-stop-multiple-click
+const stopMultipleClick = require('vue-stop-multiple-click')
 
-Vue.directive('click', StopMultipleClick)
+Vue.directive('click', stopMultipleClick)
 ```
 
 ```html
@@ -31,9 +32,7 @@ or use CDN script:
 <script src="https://cdn.jsdelivr.net/npm/vue-stop-multiple-click@0/vue-prevent-multiple-click.min.js"></script>
 
 <script>
-var StopMultipleClick = window.StopMultipleClick
-
-Vue.directive('click', StopMultipleClick)
+Vue.directive('click', window.StopMultipleClick)
 </script>
 
 <button v-click="ajaxPromiseFn">button will auto prevent multiple clicks</button>

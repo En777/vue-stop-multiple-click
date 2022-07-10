@@ -37,13 +37,12 @@
   <!-- <script src="./vue-prevent-multiple-click.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue-stop-multiple-click@0/vue-prevent-multiple-click.min.js"></script>
   <script>
-    var StopMultipleClick = window.StopMultipleClick
-    Vue.directive('click', StopMultipleClick)
+    Vue.directive('click', window.StopMultipleClick)
 
     new Vue({
       el: '#app',
       methods: {
-        onGetData() {
+        onGetData: function () {
           var url = 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js?_ts=' + new Date().getTime()
 
           return Promise.all([
@@ -51,7 +50,7 @@
             delay(2000)
           ])
         },
-        onGetData2() {
+        onGetData2: function () {
           return delay(300)
         },
       }
@@ -84,7 +83,7 @@
     new Vue({
       el: '#app2',
       methods: {
-        onGetData() {
+        onGetData: function () {
           var url = 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js'
 
           return Promise.all([
